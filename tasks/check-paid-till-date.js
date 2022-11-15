@@ -1,3 +1,4 @@
+const extractDomain = require("extract-domain");
 const parser = require('parse-whois');
 const whois = require('whois');
 
@@ -17,9 +18,9 @@ const KEYS = [
  * @param domain
  * @returns {Promise<Date>}
  */
-function getDatePaidTill(domain) {
+function getDatePaidTill(url) {
     /** Get domain from url */
-    domain = (new URL(domain)).host;
+    domain = extractDomain((new URL(url)).host, { tld: true });
 
     return new Promise((resolve, reject) => {
         whois.lookup(domain, function(err, data) {
