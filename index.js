@@ -9,34 +9,39 @@ try {
      * @type {string}
      */
     const URL = core.getInput('url');
+    const CHECK_ACTION = core.getInput('check_action');
 
-    /**
-     * Check SSL certificate
-     */
-    CheckCertificate(URL)
-        .then(date => {
-            core.setOutput("ssl-expire-date", date.toString());
-            core.setOutput("ssl-expire-days-left", Dates.countDays(date));
-        })
-        .catch(error => {
-            if (error.code === 'CERT_HAS_EXPIRED') {
-                core.setOutput("ssl-expire-date", "INVALID");
-                core.setOutput("ssl-expire-days-left", -1);
-            }
+    if (CHECK_ACTION == "ssl") {
+        /**
+         * Check SSL certificate
+         */
+        CheckCertificate(URL)
+            .then(date => {
+                core.setOutput("ssl-expire-date", date.toString());
+                core.setOutput("ssl-expire-days-left", Dates.countDays(date));
+            })
+            .catch(error => {
+                if (error.code === 'CERT_HAS_EXPIRED') {
+                    core.setOutput("ssl-expire-date", "INVALID");
+                    core.setOutput("ssl-expire-days-left", -1);
+                }
 
-            throw error;
-        })
-        .catch(core.error);
+                throw error;
+            })
+            .catch(core.error);
+    }
 
-    /**
-     * Check domain's registry expiry date
-     */
-    CheckPaidTillDate(URL)
-        .then(date => {
-            core.setOutput("paid-till-date", date.toString());
-            core.setOutput("paid-till-days-left", Dates.countDays(date));
-        })
-        .catch(core.error);
+    if (CHECK_ACTION == "registry") {
+        /**
+         * Check domain's registry expiry date
+         */
+        CheckPaidTillDate(URL)
+            .then(date => {
+                core.setOutput("paid-till-date", date.toString());
+                core.setOutput("paid-till-days-left", Dates.countDays(date));
+            })
+            .catch(core.error);
+    }
 } catch (error) {
     core.setFailed(error.message);
 }
