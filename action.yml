@@ -8,6 +8,9 @@ inputs:
   url:
     description: 'Site domain to be checked (with protocol)'
     required: true
+  check_action:
+    description: 'action'
+    required: true
 
 outputs:
   ssl-expire-date:
