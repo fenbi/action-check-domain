@@ -27,6 +27,7 @@ try {
     const ASSIGNEES = core.getInput('assignees');
 
     core.setOutput("action", CHECK_ACTION);
+    core.setOutput("urls: ", `{urls}`)
 
     records = []
 
@@ -37,6 +38,7 @@ try {
          */
 	URLS.forEach((url) => {
             var daysLeft, expireDate;
+	    core.setOutput("url: ", `{url}`)
             CheckCertificate(url)
                 .then(date => {
 		    daysLeft = Dates.countDays(date);
@@ -65,6 +67,7 @@ try {
          * Check domain's registry expiry date
          */
 	URLS.forEach((url) => {
+	    core.setOutput("url: ", `{url}`)
             var daysLeft, expireDate;
             CheckPaidTillDate(URL)
                 .then(date => {
