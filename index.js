@@ -29,6 +29,9 @@ try {
     core.setOutput("action", CHECK_ACTION);
     core.info("urls raw: ", core.getInput('urls'))
     core.info("urls: ", `{urls}`)
+    core.info("action: ", `{CHECK_ACTION} {core.getInput('check_action')}`)
+    core.info("assignees: ", `{ASSIGNEES} {core.getInput('assignees')}`)
+    core.info("minimum left days: ", `{MINIMUM_LEFT_DAYS} {core.getInput('minimum_left_days')}`)
 
     records = []
 
