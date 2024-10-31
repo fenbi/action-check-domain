@@ -13,6 +13,7 @@ inputs:
     required: true
   minimum_left_days:
     description: 'Minimum left days'
+    type: number
     required: true
   token:
     description: 'GitHub token'
@@ -27,6 +28,9 @@ outputs:
 
   issue-body:
     description: 'Expiry records'
+
+  urls:
+    description: 'urls, debug info'
 
 runs:
   using: 'node12'

@@ -38,7 +38,7 @@ try {
          */
 	URLS.forEach((url) => {
             var daysLeft, expireDate;
-	    core.setOutput("url: ", `{url}`)
+	    core.info("url: ", `{url}`)
             CheckCertificate(url)
                 .then(date => {
 		    daysLeft = Dates.countDays(date);
@@ -67,7 +67,7 @@ try {
          * Check domain's registry expiry date
          */
 	URLS.forEach((url) => {
-	    core.setOutput("url: ", `{url}`)
+	    core.info("url: ", `{url}`)
             var daysLeft, expireDate;
             CheckPaidTillDate(URL)
                 .then(date => {
