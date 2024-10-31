@@ -11,6 +11,9 @@ inputs:
   check_action:
     description: 'action'
     required: true
+  token:
+    description: 'token'
+    required: true
 
 outputs:
   ssl-expire-date:
