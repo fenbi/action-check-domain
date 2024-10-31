@@ -27,7 +27,8 @@ try {
     const ASSIGNEES = core.getInput('assignees');
 
     core.setOutput("action", CHECK_ACTION);
-    core.setOutput("urls: ", `{urls}`)
+    core.info("urls raw: ", core.getInput('urls'))
+    core.info("urls: ", `{urls}`)
 
     records = []
 
