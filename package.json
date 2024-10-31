@@ -4,7 +4,7 @@
     "build": "ncc build index.js --minify"
   },
   "devDependencies": {
-    "@actions/core": "^1.10.0",
+    "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
     "@vercel/ncc": "^0.38.2",
     "parse-whois": "^1.0.0",

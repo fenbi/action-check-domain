@@ -5,22 +5,28 @@ branding:
   color: 'gray-dark'
 
 inputs:
-  urls:
-    description: 'Site domains to be checked (with protocol)'
+  url:
+    description: 'url'
     required: true
   check_action:
     description: 'action'
     required: true
-  minimum_left_days:
-    description: 'Minimum left days'
-    type: number
-    required: true
-  token:
-    description: 'GitHub token'
-    required: true
-  assignees:
-    description: 'Issue Assignee'
-    required: false
+  # urls:
+  #   description: 'Site domains to be checked (with protocol)'
+  #   required: true
+  # check_action:
+  #   description: 'action'
+  #   required: true
+  # minimum_left_days:
+  #   description: 'Minimum left days'
+  #   type: number
+  #   required: true
+  # token:
+  #   description: 'GitHub token'
+  #   required: true
+  # assignees:
+  #   description: 'Issue Assignee'
+  #   required: false
 
 outputs:
   run-action:
