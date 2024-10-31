@@ -6,9 +6,21 @@ Watch SSL certs and registry date expiring for your domains.
 
 ## Inputs
 
-### `url`
+### `urls`
 
 Site domain to be checked (with protocol).
+
+### `action`
+
+Check action, registry or ssl.
+
+### `token`
+
+GitHub token.
+
+### `assignees`
+
+Issue assignees.
 
 ## Outputs
 

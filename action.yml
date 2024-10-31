@@ -5,25 +5,25 @@ branding:
   color: 'gray-dark'
 
 inputs:
-  url:
-    description: 'Site domain to be checked (with protocol)'
+  urls:
+    description: 'Site domains to be checked (with protocol)'
     required: true
   check_action:
     description: 'action'
     required: true
+  token:
+    description: 'GitHub token'
+    required: true
+  assignees:
+    description: 'Issue Assignee'
+    required: false
 
 outputs:
-  ssl-expire-date:
-    description: 'SSL certificate expire date'
+  run-action:
+    description: 'Run action'
 
-  ssl-expire-days-left:
-    description: 'SSL certificate expire number of days left'
-
-  paid-till-date:
-    description: 'Registry Expiry Date'
-
-  paid-till-days-left:
-    description: 'Registry Expiry number of days left'
+  issue-body:
+    description: 'Expiry records'
 
 runs:
   using: 'node12'
