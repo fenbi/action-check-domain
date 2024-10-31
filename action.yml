@@ -11,6 +11,9 @@ inputs:
   check_action:
     description: 'action'
     required: true
+  minimum_left_days:
+    description: 'Minimum left days'
+    required: true
   token:
     description: 'GitHub token'
     required: true

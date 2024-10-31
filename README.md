@@ -14,6 +14,10 @@ Site domain to be checked (with protocol).
 
 Check action, registry or ssl.
 
+### `minimum_left_days`
+
+Create a issue if left days < minimum_left_days
+
 ### `token`
 
 GitHub token.
@@ -24,21 +28,13 @@ Issue assignees.
 
 ## Outputs
 
-### `ssl-expire-date`
+### `run-action`
 
-SSL certificate expire date
+Action(registry or ssl)
 
-### `ssl-expire-days-left`
+### `issue-body`
 
-SSL certificate expire number of days left
-
-### `paid-till-date`
-
-Registry Expiry Date
-
-### `paid-till-days-left`
-
-Registry Expiry number of days left
+Issue body, domain expiration report.
 
 ## Example usage
 
